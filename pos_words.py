@@ -1,5 +1,6 @@
 import requests
 import nltk
+from word2number import w2n
 
 tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 fp = open("text.txt")
@@ -73,7 +74,15 @@ for sentence in sentences:
                     # ""
                     # "NOPE"
 
-        if word.isnumeric():
+        # if word.isnumeric():
+        #     c_type = "NUM"
+        number = 0
+        try:
+            number = w2n.word_to_num(word)
+        except:
+            number = 0
+
+        if number != 0:
             c_type = "NUM"
 
         posWord = (word, c_type)

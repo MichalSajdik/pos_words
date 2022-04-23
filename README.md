@@ -1,8 +1,8 @@
 
 
-pip install --user -U nltk
-pip install --user -U numpy
+`pip install --user -U nltk` \
+`pip install --user -U numpy`
 
 
->>> import nltk
->>> nltk.download()
+`import nltk` \
+`nltk.download()`
